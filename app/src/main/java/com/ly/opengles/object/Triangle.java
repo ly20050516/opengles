@@ -43,7 +43,7 @@ public class Triangle {
     public void initVertexData() {
         //顶点坐标数据的初始化
         vCount = 3;
-        final float UNIT_SIZE = 1.0f;
+        final float UNIT_SIZE = 1f;
         float vertices[] = new float[]
                 {
                         -3 * UNIT_SIZE, 0, 0,

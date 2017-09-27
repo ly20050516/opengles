@@ -47,7 +47,10 @@ public class MyTDView extends GLSurfaceView {
                 Log.d("LiuTag", "onSurfaceChanged: mProjMatrix[" + i + "] = " + Triangle.mProjMatrix[i]);
             }
             //调用此方法产生摄像机9参数位置矩阵
-            Matrix.setLookAtM(Triangle.mVMatrix, 0, 0,0,3,0f,0f,0f,0f,1.0f,0.0f);
+            Matrix.setLookAtM(Triangle.mVMatrix, 0,
+                    0,0,8,
+                    0f,0f,0f,
+                    0f,1.0f,0.0f);
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {

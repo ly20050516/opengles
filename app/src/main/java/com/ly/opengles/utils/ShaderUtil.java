@@ -1,74 +1,83 @@
 package com.ly.opengles.utils;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+
 import android.content.res.Resources;
 import android.opengl.GLES20;
 import android.util.Log;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
-//¼ÓÔØ¶¥µãShaderÓëÆ¬ÔªShaderµÄ¹¤¾ßÀà
-public class ShaderUtil {
-    //¼ÓÔØÖÆ¶¨shaderµÄ·½·¨
-    public static int loadShader
-    (
-            int shaderType, //shaderµÄÀàÐÍ  GLES20.GL_VERTEX_SHADER(¶¥µã)   GLES20.GL_FRAGMENT_SHADER(Æ¬Ôª)
-            String source   //shaderµÄ½Å±¾×Ö·û´®
-    ) {
-        //´´½¨Ò»¸öÐÂshader
+//ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½Shaderï¿½ï¿½Æ¬ÔªShaderï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
+public class ShaderUtil 
+{
+   //ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½shaderï¿½Ä·ï¿½ï¿½ï¿½
+   public static int loadShader
+   (
+		 int shaderType, //shaderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  GLES20.GL_VERTEX_SHADER   GLES20.GL_FRAGMENT_SHADER
+		 String source   //shaderï¿½Ä½Å±ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+   ) 
+   {
+	    //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½shader
         int shader = GLES20.glCreateShader(shaderType);
-        //Èô´´½¨³É¹¦Ôò¼ÓÔØshader
-        if (shader != 0) {
-            //¼ÓÔØshaderµÄÔ´´úÂë
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½shader
+        if (shader != 0) 
+        {
+        	//ï¿½ï¿½ï¿½ï¿½shaderï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½
             GLES20.glShaderSource(shader, source);
-            //±àÒëshader
+            //ï¿½ï¿½ï¿½ï¿½shader
             GLES20.glCompileShader(shader);
-            //´æ·Å±àÒë³É¹¦shaderÊýÁ¿µÄÊý×é
+            //ï¿½ï¿½Å±ï¿½ï¿½ï¿½É¹ï¿½shaderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             int[] compiled = new int[1];
-            //»ñÈ¡ShaderµÄ±àÒëÇé¿ö
+            //ï¿½ï¿½È¡Shaderï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             GLES20.glGetShaderiv(shader, GLES20.GL_COMPILE_STATUS, compiled, 0);
-            if (compiled[0] == 0) {//Èô±àÒëÊ§°ÜÔòÏÔÊ¾´íÎóÈÕÖ¾²¢É¾³ý´Ëshader
+            if (compiled[0] == 0) 
+            {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½shader
                 Log.e("ES20_ERROR", "Could not compile shader " + shaderType + ":");
                 Log.e("ES20_ERROR", GLES20.glGetShaderInfoLog(shader));
                 GLES20.glDeleteShader(shader);
-                shader = 0;
-            }
+                shader = 0;      
+            }  
         }
         return shader;
     }
-
-    //´´½¨shader³ÌÐòµÄ·½·¨
-    public static int createProgram(String vertexSource, String fragmentSource) {
-        //¼ÓÔØ¶¥µã×ÅÉ«Æ÷
+    
+   //ï¿½ï¿½ï¿½ï¿½shaderï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
+   public static int createProgram(String vertexSource, String fragmentSource) 
+   {
+	    //ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½
         int vertexShader = loadShader(GLES20.GL_VERTEX_SHADER, vertexSource);
-        if (vertexShader == 0) {
+        if (vertexShader == 0) 
+        {
             return 0;
         }
-
-        //¼ÓÔØÆ¬Ôª×ÅÉ«Æ÷
+        
+        //ï¿½ï¿½ï¿½ï¿½Æ¬Ôªï¿½ï¿½É«ï¿½ï¿½
         int pixelShader = loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentSource);
-        if (pixelShader == 0) {
+        if (pixelShader == 0) 
+        {
             return 0;
         }
 
-        //´´½¨³ÌÐò
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         int program = GLES20.glCreateProgram();
-        //Èô³ÌÐò´´½¨³É¹¦ÔòÏò³ÌÐòÖÐ¼ÓÈë¶¥µã×ÅÉ«Æ÷ÓëÆ¬Ôª×ÅÉ«Æ÷
-        if (program != 0) {
-            //Ïò³ÌÐòÖÐ¼ÓÈë¶¥µã×ÅÉ«Æ÷
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ò´´½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ë¶¥ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Æ¬Ôªï¿½ï¿½É«ï¿½ï¿½
+        if (program != 0) 
+        {
+        	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ë¶¥ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½
             GLES20.glAttachShader(program, vertexShader);
             checkGlError("glAttachShader");
-            //Ïò³ÌÐòÖÐ¼ÓÈëÆ¬Ôª×ÅÉ«Æ÷
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½Æ¬Ôªï¿½ï¿½É«ï¿½ï¿½
             GLES20.glAttachShader(program, pixelShader);
             checkGlError("glAttachShader");
-            //Á´½Ó³ÌÐò
+            //ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½
             GLES20.glLinkProgram(program);
-            //´æ·ÅÁ´½Ó³É¹¦programÊýÁ¿µÄÊý×é
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³É¹ï¿½programï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             int[] linkStatus = new int[1];
-            //»ñÈ¡programµÄÁ´½ÓÇé¿ö
+            //ï¿½ï¿½È¡programï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             GLES20.glGetProgramiv(program, GLES20.GL_LINK_STATUS, linkStatus, 0);
-            //ÈôÁ´½ÓÊ§°ÜÔò±¨´í²¢É¾³ý³ÌÐò
-            if (linkStatus[0] != GLES20.GL_TRUE) {
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ò±¨´ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (linkStatus[0] != GLES20.GL_TRUE) 
+            {
                 Log.e("ES20_ERROR", "Could not link program: ");
                 Log.e("ES20_ERROR", GLES20.glGetProgramInfoLog(program));
                 GLES20.glDeleteProgram(program);
@@ -77,34 +86,41 @@ public class ShaderUtil {
         }
         return program;
     }
-
-    //¼ì²éÃ¿Ò»²½²Ù×÷ÊÇ·ñÓÐ´íÎóµÄ·½·¨
-    public static void checkGlError(String op) {
+    
+   //ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ 
+   public static void checkGlError(String op) 
+   {
         int error;
-        while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
+        while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) 
+        {
             Log.e("ES20_ERROR", op + ": glError " + error);
             throw new RuntimeException(op + ": glError " + error);
         }
-    }
-
-    //´Ósh½Å±¾ÖÐ¼ÓÔØshaderÄÚÈÝµÄ·½·¨
-    public static String loadFromAssetsFile(String fname, Resources r) {
-        String result = null;
-        try {
-            InputStream in = r.getAssets().open(fname);
-            int ch = 0;
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            while ((ch = in.read()) != -1) {
-                baos.write(ch);
-            }
-            byte[] buff = baos.toByteArray();
-            baos.close();
-            in.close();
-            result = new String(buff, "UTF-8");
-            result = result.replaceAll("\\r\\n", "\n");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
+   }
+   
+   //ï¿½ï¿½shï¿½Å±ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½shaderï¿½ï¿½ï¿½ÝµÄ·ï¿½ï¿½ï¿½
+   public static String loadFromAssetsFile(String fname,Resources r)
+   {
+   	String result=null;    	
+   	try
+   	{
+   		InputStream in=r.getAssets().open(fname);
+			int ch=0;
+		    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		    while((ch=in.read())!=-1)
+		    {
+		      	baos.write(ch);
+		    }      
+		    byte[] buff=baos.toByteArray();
+		    baos.close();
+		    in.close();
+   		result=new String(buff,"UTF-8"); 
+   		result=result.replaceAll("\\r\\n","\n");
+   	}
+   	catch(Exception e)
+   	{
+   		e.printStackTrace();
+   	}    	
+   	return result;
+   }
 }

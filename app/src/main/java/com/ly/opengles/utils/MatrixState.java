@@ -51,9 +51,20 @@ public class MatrixState
     )
     {    	
     	Matrix.orthoM(mProjMatrix, 0, left, right, bottom, top, near, far);
-    }   
-   
-    //��ȡ����������ܱ任����
+    }
+
+	public static void setProjectFrustum(// ÉèÖÃÍ¸ÊÓÍ¶Ó°²ÎÊý
+										 float left, // nearÃæµÄleft
+										 float right, // nearÃæµÄright
+										 float bottom, // nearÃæµÄbottom
+										 float top, // nearÃæµÄtop
+										 float near, // nearÃæ¾àÀë
+										 float far // farÃæ¾àÀë
+	) {
+		Matrix.frustumM(mProjMatrix, 0, left, right, bottom, top, near, far);
+	}
+
+	//��ȡ����������ܱ任����
     public static float[] getFinalMatrix(float[] spec)
     {
     	mMVPMatrix=new float[16];

@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/src/main/assets/frag.glsl" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/assets/vertex.glsl" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/ly/opengles/object/Cube.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/ly/opengles/object/Triangle.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/ly/opengles/utils/ShaderUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/ly/opengles/view/MySurfaceView.java" charset="GBK" />

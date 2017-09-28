@@ -145,7 +145,7 @@ public class SixPointedStar {
         //������z����ת
         Matrix.rotateM(mMMatrix, 0, xAngle, 1, 0, 0);
         //�����ձ任������shader����
-        GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, MatrixState.getFinalMatrix(mMMatrix), 0);
+        GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, MatrixState.getFinalMatrix(), 0);
         //Ϊ����ָ������λ������
         GLES20.glVertexAttribPointer
                 (

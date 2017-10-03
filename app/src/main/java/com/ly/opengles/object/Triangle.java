@@ -145,6 +145,11 @@ public class Triangle {
         mMVPMatrix = new float[16];
         Matrix.multiplyMM(mMVPMatrix, 0, mVMatrix, 0, spec, 0);
         Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0);
+
+        for (int i = 0; i < mMVPMatrix.length; i++) {
+            Log.d(TAG, "getFianlMatrix: mMVPMatrix [ " + i + "]" + mMVPMatrix[i]);
+
+        }
         return mMVPMatrix;
     }
 }

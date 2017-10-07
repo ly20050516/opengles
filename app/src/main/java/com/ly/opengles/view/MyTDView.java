@@ -36,21 +36,29 @@ public class MyTDView extends GLSurfaceView {
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            //设置视窗大小及位置
-            GLES20.glViewport(0, 0, width, height);
-            //计算GLSurfaceView的宽高比
-            float ratio = (float) width / height;
-            Log.d("LiuTag", "onSurfaceChanged: width = " + width + ";height = " + height + ";ratio = " + ratio);
-            //调用此方法计算产生透视投影矩阵
-            Matrix.frustumM(Triangle.mProjMatrix, 0, -ratio, ratio, -1, 1, 1, 10);
-            for (int i = 0; i < Triangle.mProjMatrix.length; i++) {
-                Log.d("LiuTag", "onSurfaceChanged: mProjMatrix[" + i + "] = " + Triangle.mProjMatrix[i]);
-            }
+
             //调用此方法产生摄像机9参数位置矩阵
             Matrix.setLookAtM(Triangle.mVMatrix, 0,
                     0,0,8,
                     0f,0f,0f,
-                    0f,1.0f,0.0f);
+                    0f,1.0f,.0f);
+
+            for (int i = 0; i < Triangle.mVMatrix.length; i++) {
+                Log.d("LiuTag", "onSurfaceChanged: mVMatrix[" + i + "] = " + Triangle.mVMatrix[i]);
+            }
+
+            //计算GLSurfaceView的宽高比
+            float ratio = (float) width / height;
+            Log.d("LiuTag", "onSurfaceChanged: width = " + width + ";height = " + height + ";ratio = " + ratio);
+            //调用此方法计算产生透视投影矩阵
+            Matrix.frustumM(Triangle.mProjMatrix, 0, -ratio, ratio, -1, 1,.5f, 10);
+            for (int i = 0; i < Triangle.mProjMatrix.length; i++) {
+                Log.d("LiuTag", "onSurfaceChanged: mProjMatrix[" + i + "] = " + Triangle.mProjMatrix[i]);
+            }
+
+            //设置视窗大小及位置
+            GLES20.glViewport(0, 0, width, height);
+
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {

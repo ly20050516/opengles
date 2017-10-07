@@ -19,20 +19,20 @@ public class MainActivity extends AppCompatActivity {
         myTDView = new MyTDView(this);
         mySurfaceView = new MySurfaceView(this);
         cubeSurfaceView = new CubeSurfaceView(this);
-        setContentView(myTDView);
+        setContentView(cubeSurfaceView);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        myTDView.onResume();
+        cubeSurfaceView.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
 
-        myTDView.onPause();
+        cubeSurfaceView.onPause();
     }
 }

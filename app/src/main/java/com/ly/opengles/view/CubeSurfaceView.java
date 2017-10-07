@@ -26,34 +26,33 @@ public class CubeSurfaceView extends GLSurfaceView
     	
         public void onDrawFrame(GL10 gl) 
         { 
-        	//�����Ȼ�������ɫ����
             GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
-            //����ԭ������
-            MatrixState.pushMatrix();
-            cube.drawSelf();    
-            MatrixState.popMatrix();
+//            MatrixState.pushMatrix();
+//            cube.drawSelf();
+//            MatrixState.popMatrix();
             
-            //���Ʊ任���������
             MatrixState.pushMatrix();
-            MatrixState.translate(4, 0, 0);//��x����ƽ��3
-            MatrixState.rotate(30,0,0,1);
+            MatrixState.translate(0, 0, -3);
+//            MatrixState.rotate(30,0,0,1);
             cube.drawSelf();    
             MatrixState.popMatrix();
         }  
 
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            //�����Ӵ���С��λ�� 
-        	GLES20.glViewport(0, 0, width, height); 
-        	//����GLSurfaceView�Ŀ�߱�
-            Constant.ratio = (float) width / height;
-			// ���ô˷����������͸��ͶӰ����
-            MatrixState.setProjectFrustum(-Constant.ratio*0.8f, Constant.ratio*1.2f, -1, 1, 10, 200);
-			// ���ô˷������������9����λ�þ���
-			MatrixState.setCamera(-16f, 8f, 90f, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
-            
-            //��ʼ���任����
+
+
+
             MatrixState.setInitStack();
+
+            MatrixState.setCamera(16f,8f, 90f, 0f, 0f, 0f, .0f, .0f, 1.0f);
+
+            Constant.ratio = (float) width / height;
+
+            MatrixState.setProjectFrustum(-Constant.ratio, Constant.ratio, -1f, 1f, 10f, 100);
+
+
+            GLES20.glViewport(0, 0, width, height);
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {

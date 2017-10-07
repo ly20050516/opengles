@@ -43,11 +43,11 @@ public class Triangle {
     public void initVertexData() {
         //顶点坐标数据的初始化
         vCount = 3;
-        final float UNIT_SIZE = 1f;
+        final float UNIT_SIZE = 2.0f;
         float vertices[] = new float[]
                 {
-                        -3 * UNIT_SIZE, 0, 0,
-                        0, -4 * UNIT_SIZE, 0,
+                        -5 * UNIT_SIZE, 0, 0,
+                        0, -5 * UNIT_SIZE, 0,
                         5 * UNIT_SIZE, 0, 0
                 };
 
@@ -95,23 +95,35 @@ public class Triangle {
         muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
     }
 
+    boolean logMMatrix = true;
+    boolean logMMatrixTranslateM = true;
+    boolean logMMatrixRotate = true;
     public void drawSelf() {
         //制定使用某套shader程序
         GLES20.glUseProgram(mProgram);
         //初始化变换矩阵
         Matrix.setRotateM(mMMatrix, 0, 0, 0, 1, 0);
-        for (int i = 0; i < mMMatrix.length; i++) {
-//            Log.d("LiuTag", "setRotateM: mMMatrix[" + i + "] = " + mMMatrix[i]);
+        if(logMMatrix) {
+            logMMatrix = false;
+            for (int i = 0; i < mMMatrix.length; i++) {
+                Log.d("LiuTag", "setRotateM: mMMatrix[" + i + "] = " + mMMatrix[i]);
+            }
         }
         //设置沿Z轴正向位移1
-//        Matrix.translateM(mMMatrix, 0, 0, 0, -1);
-        for (int i = 0; i < mMMatrix.length; i++) {
-//            Log.d("LiuTag", "translateM 1: mMMatrix[" + i + "] = " + mMMatrix[i]);
+        Matrix.translateM(mMMatrix, 0, 0, 0, 0);
+        if(logMMatrixTranslateM) {
+            logMMatrixTranslateM = false;
+            for (int i = 0; i < mMMatrix.length; i++) {
+                Log.d("LiuTag", "translateM 1: mMMatrix[" + i + "] = " + mMMatrix[i]);
+            }
         }
         //设置绕x轴旋转
-//        Matrix.rotateM(mMMatrix, 0, xAngle, 1, 0, 0);
-        for (int i = 0; i < mMMatrix.length; i++) {
-//            Log.d("LiuTag", "rotateM x : mMMatrix[" + i + "] = " + mMMatrix[i]);
+//        Matrix.rotateM(mMMatrix, 0, xAngle, 1.0f, 0, 0);
+        if(logMMatrixRotate) {
+            logMMatrixRotate = false;
+            for (int i = 0; i < mMMatrix.length; i++) {
+                Log.d("LiuTag", "rotateM x : mMMatrix[" + i + "] = " + mMMatrix[i]);
+            }
         }
 
 
@@ -141,14 +153,29 @@ public class Triangle {
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount);
     }
 
+    static boolean logMV = true;
+    static boolean logMVP = true;
+
     public static float[] getFianlMatrix(float[] spec) {
         mMVPMatrix = new float[16];
         Matrix.multiplyMM(mMVPMatrix, 0, mVMatrix, 0, spec, 0);
+
+        if(logMV) {
+            logMV = false;
+            for (int i = 0; i < mMVPMatrix.length; i++) {
+                Log.d(TAG, "getFianlMatrix: mMVPMatrix [ " + i + "]" + mMVPMatrix[i]);
+
+            }
+        }
+
+
         Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0);
+        if(logMVP) {
+            logMVP = false;
+            for (int i = 0; i < mMVPMatrix.length; i++) {
+                Log.d(TAG, "getFianlMatrix: mMVPMatrix [ " + i + "]" + mMVPMatrix[i]);
 
-        for (int i = 0; i < mMVPMatrix.length; i++) {
-            Log.d(TAG, "getFianlMatrix: mMVPMatrix [ " + i + "]" + mMVPMatrix[i]);
-
+            }
         }
         return mMVPMatrix;
     }

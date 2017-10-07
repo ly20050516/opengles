@@ -74,6 +74,7 @@ public class MySurfaceView extends GLSurfaceView
 					0, 0, 0f, 
 					0f, 1.0f, 0.0f
 					);
+            MatrixState.setInitStack();
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".business.texture.TextureActivity">
+    tools:context=".business.texture.sample0701.Texture0701Activity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

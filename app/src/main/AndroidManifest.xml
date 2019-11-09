@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity  android:label="@string/chapter_texture_sample_7_1"
-            android:name=".business.texture.TextureActivity"></activity>
+        <activity
+            android:name=".business.texture.sample0702.Texture0702Activity"
+            android:label="@string/chapter_texture_sample_7_2"></activity>
+        <activity
+            android:name=".business.texture.sample0701.Texture0701Activity"
+            android:label="@string/chapter_texture_sample_7_1" />
         <activity
             android:name=".business.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

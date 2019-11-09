@@ -8,8 +8,7 @@ package ly.com.opengles.utils;
 import android.opengl.Matrix;
 
 //存储系统矩阵状态的类
-public class MatrixState
-{
+public class MatrixState {
     private static float[] mProjMatrix = new float[16];//4x4矩阵 投影用
     private static float[] mVMatrix = new float[16];//摄像机位置朝向9参数矩阵
     private static float[] mMVPMatrix;//最后起作用的总变换矩阵
@@ -17,7 +16,7 @@ public class MatrixState
     //设置摄像机
     public static void setCamera
     (
-            float cx,	//摄像机位置x
+            float cx,    //摄像机位置x
             float cy,   //摄像机位置y
             float cz,   //摄像机位置z
             float tx,   //摄像机目标点x
@@ -26,8 +25,7 @@ public class MatrixState
             float upx,  //摄像机UP向量X分量
             float upy,  //摄像机UP向量Y分量
             float upz   //摄像机UP向量Z分量
-    )
-    {
+    ) {
         Matrix.setLookAtM
                 (
                         mVMatrix,
@@ -47,21 +45,19 @@ public class MatrixState
     //设置透视投影参数
     public static void setProject
     (
-            float left,		//near面的left
+            float left,        //near面的left
             float right,    //near面的right
             float bottom,   //near面的bottom
             float top,      //near面的top
-            float near,		//near面距离
+            float near,        //near面距离
             float far       //far面距离
-    )
-    {
+    ) {
         Matrix.frustumM(mProjMatrix, 0, left, right, bottom, top, near, far);
     }
 
     //获取具体物体的总变换矩阵
-    public static float[] getFinalMatrix(float[] spec)
-    {
-        mMVPMatrix=new float[16];
+    public static float[] getFinalMatrix(float[] spec) {
+        mMVPMatrix = new float[16];
         Matrix.multiplyMM(mMVPMatrix, 0, mVMatrix, 0, spec, 0);
         Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0);
         return mMVPMatrix;

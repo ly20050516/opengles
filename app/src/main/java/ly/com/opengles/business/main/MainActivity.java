@@ -13,6 +13,7 @@ import ly.com.opengles.R;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
 import ly.com.opengles.business.texture.sample0702.Texture0702Activity;
 import ly.com.opengles.business.texture.sample0701.Texture0701Activity;
+import ly.com.opengles.business.texture.sample0703.Texture0703Activity;
 import ly.com.opengles.entity.ChapterItem;
 
 /**
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         ChapterItem chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_1), Texture0701Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_2), Texture0702Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_3), Texture0703Activity.class);
         chapterItems.add(chapterItem);
 
 

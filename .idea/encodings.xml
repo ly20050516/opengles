@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/app/src/main/assets/texture_sample_7_1/vertex.glsl" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/app/src/main/assets/texture_sample_7_2/frag.glsl" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/app/src/main/assets/texture_sample_7_2/vertex.glsl" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/texture_sample_7_3/frag.glsl" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/texture_sample_7_3/vertex.glsl" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/ly/com/opengles/business/texture/sample0702/utils/MySurfaceView.java" charset="GB2312" />
   </component>
 </project>

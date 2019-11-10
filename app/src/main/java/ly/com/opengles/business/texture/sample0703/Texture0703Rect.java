@@ -1,6 +1,7 @@
 package ly.com.opengles.business.texture.sample0703;
 
 import android.opengl.GLES20;
+import android.provider.Settings;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -133,6 +134,7 @@ public class Texture0703Rect {
         //绑定纹理
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texId);
+        GLES20.glUniform1i(GLES20.glGetUniformLocation(mProgram,"sTexture"),0);
 
         //绘制纹理矩形
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount);

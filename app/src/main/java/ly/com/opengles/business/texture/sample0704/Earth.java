@@ -167,6 +167,7 @@ public class Earth {
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texId);
         GLES20.glActiveTexture(GLES20.GL_TEXTURE1);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texIdNight);
+
         GLES20.glUniform1i(uDayTexHandle, 0);
         GLES20.glUniform1i(uNightTexHandle, 1);
         //绘制三角形

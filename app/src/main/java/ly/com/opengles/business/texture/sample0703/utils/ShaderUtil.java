@@ -14,6 +14,9 @@ import java.io.InputStream;
 
 //加载顶点Shader与片元Shader的工具类
 public class ShaderUtil {
+
+    public static int orderCount = 0;
+
     //加载制定shader的方法
     public static int loadShader
     (

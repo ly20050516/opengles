@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import ly.com.opengles.R;
+import ly.com.opengles.business.light.sample0601.Light0601Activity;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
 import ly.com.opengles.business.texture.sample0702.Texture0702Activity;
 import ly.com.opengles.business.texture.sample0701.Texture0701Activity;
@@ -46,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
         List<ChapterItem> chapterItems = new ArrayList<>();
 
-        ChapterItem chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_1), Texture0701Activity.class);
+        ChapterItem chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_1), Light0601Activity.class);
+        chapterItems.add(chapterItem);
+
+        chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_1), Texture0701Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_2), Texture0702Activity.class);
         chapterItems.add(chapterItem);

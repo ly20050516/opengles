@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".business.texture.sample0704.Texture0704Activity"></activity>
+        <activity
+            android:name=".business.light.sample0601.Light0601Activity"
+            android:label="@string/chapter_light_sample_6_1"></activity>
+        <activity
+            android:name=".business.texture.sample0704.Texture0704Activity"
+            android:label="@string/chapter_texture_sample_7_4"/>
         <activity
             android:name=".business.texture.sample0703.Texture0703Activity"
             android:label="@string/chapter_texture_sample_7_3" />

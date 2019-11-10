@@ -16,7 +16,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import ly.com.opengles.R;
-import ly.com.opengles.utils.MatrixState;
+import ly.com.opengles.business.texture.sample0702.utils.MatrixState;
 
 class Texture0702SurfaceView extends GLSurfaceView
 {
@@ -117,6 +117,7 @@ class Texture0702SurfaceView extends GLSurfaceView
                         0           //偏移量
                 );
         int textureId=textures[0];
+        // 这里绑定纹理是为了加载图片到显存中
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureId);
 
         GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER,GLES20.GL_NEAREST);

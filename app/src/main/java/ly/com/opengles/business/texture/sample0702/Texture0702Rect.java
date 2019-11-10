@@ -12,10 +12,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-import ly.com.opengles.utils.MatrixState;
-import ly.com.opengles.utils.ShaderUtil;
+import ly.com.opengles.business.texture.sample0702.utils.MatrixState;
+import ly.com.opengles.business.texture.sample0702.utils.ShaderUtil;
 
-import static ly.com.opengles.utils.ShaderUtil.createProgram;
+import static ly.com.opengles.business.texture.sample0702.utils.ShaderUtil.createProgram;
 
 //纹理矩形
 public class Texture0702Rect {
@@ -149,7 +149,7 @@ public class Texture0702Rect {
         GLES20.glEnableVertexAttribArray(maPositionHandle);
         GLES20.glEnableVertexAttribArray(maTexCoorHandle);
 
-        //绑定纹理
+        //激活并再次绑定纹理
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texId);
 

@@ -1,4 +1,4 @@
-package ly.com.opengles.utils;
+package ly.com.opengles.business.texture.sample0702.utils;
 
 /**
  * @author：ly on 2019-11-10 00:29

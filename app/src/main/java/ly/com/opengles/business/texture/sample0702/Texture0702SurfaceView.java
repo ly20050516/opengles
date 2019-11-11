@@ -15,8 +15,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import ly.com.base.utils.MatrixState;
 import ly.com.opengles.R;
-import ly.com.opengles.business.texture.sample0702.utils.MatrixState;
 
 class Texture0702SurfaceView extends GLSurfaceView
 {

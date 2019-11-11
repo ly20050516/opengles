@@ -12,10 +12,11 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-import ly.com.opengles.business.texture.sample0702.utils.MatrixState;
-import ly.com.opengles.business.texture.sample0702.utils.ShaderUtil;
+import ly.com.base.utils.MatrixState;
+import ly.com.base.utils.ShaderUtil;
 
-import static ly.com.opengles.business.texture.sample0702.utils.ShaderUtil.createProgram;
+import static ly.com.base.utils.ShaderUtil.createProgram;
+
 
 //纹理矩形
 public class Texture0702Rect {

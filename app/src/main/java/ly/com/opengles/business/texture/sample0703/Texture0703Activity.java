@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import ly.com.base.utils.ShaderUtil;
 import ly.com.opengles.R;
-import ly.com.opengles.business.texture.sample0703.utils.ShaderUtil;
 
 public class Texture0703Activity extends AppCompatActivity {
 

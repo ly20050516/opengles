@@ -11,8 +11,8 @@ import android.view.MotionEvent;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import ly.com.base.utils.MatrixState;
 import ly.com.opengles.R;
-import ly.com.opengles.business.texture.sample0704.utils.MatrixState;
 
 import static ly.com.opengles.business.texture.sample0704.Constant.ratio;
 import static ly.com.opengles.business.texture.sample0704.Constant.threadFlag;

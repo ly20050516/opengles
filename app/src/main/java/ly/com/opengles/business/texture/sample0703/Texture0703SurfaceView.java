@@ -11,9 +11,10 @@ import android.util.Log;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import ly.com.base.utils.MatrixState;
+import ly.com.base.utils.ShaderUtil;
 import ly.com.opengles.R;
-import ly.com.opengles.business.texture.sample0703.utils.MatrixState;
-import ly.com.opengles.business.texture.sample0703.utils.ShaderUtil;
+
 
 /**
  * @author：ly on 2019-11-10 12:10

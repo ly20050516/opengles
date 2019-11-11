@@ -7,10 +7,10 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
-import ly.com.opengles.business.texture.sample0704.utils.MatrixState;
-import ly.com.opengles.business.texture.sample0704.utils.ShaderUtil;
+import ly.com.base.utils.MatrixState;
+import ly.com.base.utils.ShaderUtil;
 
-import static ly.com.opengles.business.texture.sample0704.utils.ShaderUtil.createProgram;
+import static ly.com.base.utils.ShaderUtil.createProgram;
 
 /**
  * @author：ly on 2019-11-10 13:13

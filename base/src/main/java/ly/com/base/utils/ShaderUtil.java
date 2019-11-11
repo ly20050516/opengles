@@ -1,4 +1,4 @@
-package ly.com.opengles.business.light.sample0601.utils;
+package ly.com.base.utils;
 
 /**
  * @author：ly on 2019-11-10 00:30

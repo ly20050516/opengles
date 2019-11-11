@@ -7,8 +7,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
-import ly.com.opengles.business.light.sample0601.utils.MatrixState;
-import ly.com.opengles.business.light.sample0601.utils.ShaderUtil;
+
+import ly.com.base.utils.MatrixState;
+import ly.com.base.utils.ShaderUtil;
 
 import static ly.com.opengles.business.light.sample0601.Constant.UNIT_SIZE;
 

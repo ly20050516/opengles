@@ -8,7 +8,8 @@ import android.view.MotionEvent;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import ly.com.opengles.business.light.sample0601.utils.MatrixState;
+import ly.com.base.utils.MatrixState;
+
 
 /**
  * @author：ly on 2019-11-10 19:06

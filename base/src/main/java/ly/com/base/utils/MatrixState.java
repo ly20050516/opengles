@@ -1,4 +1,4 @@
-package ly.com.opengles.business.light.sample0601.utils;
+package ly.com.base.utils;
 
 /**
  * @author：ly on 2019-11-10 00:29
@@ -8,16 +8,21 @@ package ly.com.opengles.business.light.sample0601.utils;
 import android.opengl.Matrix;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import java.util.Stack;
 
 //存储系统矩阵状态的类
 public class MatrixState {
     private static float[] mProjMatrix = new float[16];//4x4矩阵 投影用
     private static float[] mVMatrix = new float[16];//摄像机位置朝向9参数矩阵
     private static float[] currMatrix;//当前变换矩阵
+    public static float[] lightLocationSun = new float[]{0, 0, 0};//太阳定位光光源位置
+    public static FloatBuffer cameraFB;
+    public static FloatBuffer lightPositionFBSun;
 
-    //保护变换矩阵的栈
-    static float[][] mStack = new float[10][16];
-    static int stackTop = -1;
+
+    public static Stack<float[]> mStack = new Stack<float[]>();//保护变换矩阵的栈
 
     public static void setInitStack()//获取不变换初始矩阵
     {
@@ -27,21 +32,15 @@ public class MatrixState {
 
     public static void pushMatrix()//保护变换矩阵
     {
-        stackTop++;
-        for (int i = 0; i < 16; i++) {
-            mStack[stackTop][i] = currMatrix[i];
-        }
+        mStack.push(currMatrix.clone());
     }
 
     public static void popMatrix()//恢复变换矩阵
     {
-        for (int i = 0; i < 16; i++) {
-            currMatrix[i] = mStack[stackTop][i];
-        }
-        stackTop--;
+        currMatrix = mStack.pop();
     }
 
-    public static void translate(float x, float y, float z)//设置沿xyz轴移动
+    public static void transtate(float x, float y, float z)//设置沿xyz轴移动
     {
         Matrix.translateM(currMatrix, 0, x, y, z);
     }
@@ -53,21 +52,18 @@ public class MatrixState {
 
 
     //设置摄像机
-    static ByteBuffer llbb = ByteBuffer.allocateDirect(3 * 4);
-    static float[] cameraLocation = new float[3];//摄像机位置
-
     public static void setCamera
-            (
-                    float cx,    //摄像机位置x
-                    float cy,   //摄像机位置y
-                    float cz,   //摄像机位置z
-                    float tx,   //摄像机目标点x
-                    float ty,   //摄像机目标点y
-                    float tz,   //摄像机目标点z
-                    float upx,  //摄像机UP向量X分量
-                    float upy,  //摄像机UP向量Y分量
-                    float upz   //摄像机UP向量Z分量
-            ) {
+    (
+            float cx,    //摄像机位置x
+            float cy,   //摄像机位置y
+            float cz,   //摄像机位置z
+            float tx,   //摄像机目标点x
+            float ty,   //摄像机目标点y
+            float tz,   //摄像机目标点z
+            float upx,  //摄像机UP向量X分量
+            float upy,  //摄像机UP向量Y分量
+            float upz   //摄像机UP向量Z分量
+    ) {
         Matrix.setLookAtM
                 (
                         mVMatrix,
@@ -82,6 +78,17 @@ public class MatrixState {
                         upy,
                         upz
                 );
+
+        float[] cameraLocation = new float[3];//摄像机位置
+        cameraLocation[0] = cx;
+        cameraLocation[1] = cy;
+        cameraLocation[2] = cz;
+
+        ByteBuffer llbb = ByteBuffer.allocateDirect(3 * 4);
+        llbb.order(ByteOrder.nativeOrder());//设置字节顺序
+        cameraFB = llbb.asFloatBuffer();
+        cameraFB.put(cameraLocation);
+        cameraFB.position(0);
     }
 
     //设置透视投影参数
@@ -111,9 +118,8 @@ public class MatrixState {
     }
 
     //获取具体物体的总变换矩阵
-    static float[] mMVPMatrix = new float[16];
-
     public static float[] getFinalMatrix() {
+        float[] mMVPMatrix = new float[16];
         Matrix.multiplyMM(mMVPMatrix, 0, mVMatrix, 0, currMatrix, 0);
         Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0);
         return mMVPMatrix;
@@ -122,6 +128,18 @@ public class MatrixState {
     //获取具体物体的变换矩阵
     public static float[] getMMatrix() {
         return currMatrix;
+    }
+
+    //设置太阳光源位置的方法
+    public static void setLightLocationSun(float x, float y, float z) {
+        lightLocationSun[0] = x;
+        lightLocationSun[1] = y;
+        lightLocationSun[2] = z;
+        ByteBuffer llbb = ByteBuffer.allocateDirect(3 * 4);
+        llbb.order(ByteOrder.nativeOrder());//设置字节顺序
+        lightPositionFBSun = llbb.asFloatBuffer();
+        lightPositionFBSun.put(lightLocationSun);
+        lightPositionFBSun.position(0);
     }
 }
 

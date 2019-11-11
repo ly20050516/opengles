@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".business.light.sample0601.Light0601Activity"
+            android:name="ly.com.light.sample0601.Light0601Activity"
             android:label="@string/chapter_light_sample_6_1"></activity>
         <activity
-            android:name=".business.texture.sample0704.Texture0704Activity"
+            android:name="ly.com.texture.sample0704.Texture0704Activity"
             android:label="@string/chapter_texture_sample_7_4"/>
         <activity
-            android:name=".business.texture.sample0703.Texture0703Activity"
+            android:name="ly.com.texture.sample0703.Texture0703Activity"
             android:label="@string/chapter_texture_sample_7_3" />
         <activity
-            android:name=".business.texture.sample0702.Texture0702Activity"
+            android:name="ly.com.texture.sample0702.Texture0702Activity"
             android:label="@string/chapter_texture_sample_7_2" />
         <activity
-            android:name=".business.texture.sample0701.Texture0701Activity"
+            android:name="ly.com.texture.sample0701.Texture0701Activity"
             android:label="@string/chapter_texture_sample_7_1" />
         <activity
             android:name=".business.main.MainActivity"

@@ -1,7 +1,7 @@
 precision mediump float;
 uniform float uR;
 varying vec2 mcLongLat; // 接收从顶点着色器过来的参数
-varying vec2 vPosition; // 接收从顶点着色器过来的顶点位置
+varying vec3 vPosition; // 接收从顶点着色器过来的顶点位置
 
 void main() {
     vec3 color;
@@ -18,5 +18,5 @@ void main() {
         color = vec3(1.0,1.0,1.0);
     }
 
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color,0.0);
 }

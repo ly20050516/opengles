@@ -13,6 +13,9 @@
             android:name="ly.com.light.sample0601.Light0601Activity"
             android:label="@string/chapter_light_sample_6_1"></activity>
         <activity
+            android:name="ly.com.light.sample0602.Light0602Activity"
+            android:label="@string/chapter_light_sample_6_2"></activity>
+        <activity
             android:name="ly.com.texture.sample0704.Texture0704Activity"
             android:label="@string/chapter_texture_sample_7_4"/>
         <activity

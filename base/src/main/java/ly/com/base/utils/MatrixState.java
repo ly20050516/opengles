@@ -41,7 +41,7 @@ public class MatrixState {
         currMatrix = mStack.pop();
     }
 
-    public static void transtate(float x, float y, float z)//设置沿xyz轴移动
+    public static void translate(float x, float y, float z)//设置沿xyz轴移动
     {
         Matrix.translateM(currMatrix, 0, x, y, z);
     }

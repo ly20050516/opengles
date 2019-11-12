@@ -45,7 +45,7 @@ public class Texture0703SurfaceView extends GLSurfaceView {
             GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
             //绘制小纹理矩形
             MatrixState.pushMatrix();    //进栈
-            MatrixState.transtate(0, 1.3f, 1);    //平移
+            MatrixState.translate(0, 1.3f, 1);    //平移
             MatrixState.rotate(-20, 0, 0, 1);    //旋转
             MatrixState.scale(0.3f, 0.3f, 0.3f); //缩放
             texRect.drawSelf(currenttexId256);    //绘制小四边形
@@ -53,7 +53,7 @@ public class Texture0703SurfaceView extends GLSurfaceView {
 
             //绘制大纹理矩形
             MatrixState.pushMatrix();    //进栈
-            MatrixState.transtate(0, -0.6f, 1);    //平移
+            MatrixState.translate(0, -0.6f, 1);    //平移
             MatrixState.rotate(-20, 0, 0, 1);    //旋转
             texRect.drawSelf(currenttexId32);    //绘制大四边形
             MatrixState.popMatrix();//出栈

@@ -9,6 +9,7 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import ly.com.light.sample0602.Light0602Activity;
 import ly.com.opengles.R;
 import ly.com.light.sample0601.Light0601Activity;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         List<ChapterItem> chapterItems = new ArrayList<>();
 
         ChapterItem chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_1), Light0601Activity.class);
+        chapterItems.add(chapterItem);
+
+        chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_2), Light0602Activity.class);
         chapterItems.add(chapterItem);
 
         chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_1), Texture0701Activity.class);

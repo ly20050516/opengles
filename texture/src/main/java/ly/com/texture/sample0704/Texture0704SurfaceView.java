@@ -98,7 +98,7 @@ public class Texture0704SurfaceView extends GLSurfaceView {
             //绘制纹理圆球
             earth.drawSelf(textureIdEarth, textureIdEarthNight);
             //推坐标系到月球位置
-            MatrixState.transtate(2f, 0, 0);
+            MatrixState.translate(2f, 0, 0);
             //月球自转
             MatrixState.rotate(eAngle, 0, 1, 0);
             //绘制月球

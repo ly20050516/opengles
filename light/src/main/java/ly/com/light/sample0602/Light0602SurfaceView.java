@@ -16,19 +16,21 @@ import ly.com.base.utils.MatrixState;
  */
 public class Light0602SurfaceView extends GLSurfaceView {
 
-    private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
+    private final float TOUCH_SCALE_FACTOR = 180.0f / 320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
     Ball ball;//球
-    float lightOffset=-4;//灯光的位置或方向的偏移量
+    float lightOffset = -4;//灯光的位置或方向的偏移量
     private float mPreviousY;//上次的触控位置Y坐标
     private float mPreviousX;//上次的触控位置X坐标
+
     public Light0602SurfaceView(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
-        mRenderer = new SceneRenderer();	//创建场景渲染器
-        setRenderer(mRenderer);				//设置渲染器
+        mRenderer = new SceneRenderer();    //创建场景渲染器
+        setRenderer(mRenderer);                //设置渲染器
         setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);//设置渲染模式为主动渲染
     }
+
     //触摸事件回调方法
     @Override
     public boolean onTouchEvent(MotionEvent e) {
@@ -39,19 +41,18 @@ public class Light0602SurfaceView extends GLSurfaceView {
                 float dy = y - mPreviousY;//计算触控笔Y位移
                 float dx = x - mPreviousX;//计算触控笔X位移
                 ball.yAngle += dx * TOUCH_SCALE_FACTOR;//设置填充椭圆绕y轴旋转的角度
-                ball.xAngle+= dy * TOUCH_SCALE_FACTOR;//设置填充椭圆绕x轴旋转的角度
+                ball.xAngle += dy * TOUCH_SCALE_FACTOR;//设置填充椭圆绕x轴旋转的角度
         }
         mPreviousY = y;//记录触控笔位置
         mPreviousX = x;//记录触控笔位置
         return true;
     }
-    private class SceneRenderer implements GLSurfaceView.Renderer
-    {
 
-        public void onDrawFrame(GL10 gl)
-        {
+    private class SceneRenderer implements GLSurfaceView.Renderer {
+
+        public void onDrawFrame(GL10 gl) {
             //清除深度缓冲与颜色缓冲
-            GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
+            GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
             //保护现场
             MatrixState.pushMatrix();
             //绘制球
@@ -84,15 +85,16 @@ public class Light0602SurfaceView extends GLSurfaceView {
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             //设置屏幕背景色RGBA
-            GLES20.glClearColor(0f,0f,0f, 1.0f);
+            GLES20.glClearColor(0f, 0f, 0f, 1.0f);
             //创建球对象
-            ball=new Ball(Light0602SurfaceView.this);
+            ball = new Ball(Light0602SurfaceView.this);
             //打开深度检测
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
             //打开背面剪裁
             GLES20.glEnable(GLES20.GL_CULL_FACE);
         }
     }
+
     public void setLightOffset(float lightOffset) {
         this.lightOffset = lightOffset;
     }

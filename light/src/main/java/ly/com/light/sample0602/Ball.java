@@ -133,6 +133,9 @@ public class Ball {
                 mv.getResources());
         // 基于顶点着色器与片元着色器创建程序
         mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
+        if(mProgram == 0) {
+            throw new IllegalStateException("program is 0");
+        }
         // 获取程序中顶点位置属性引用
         maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
         // 获取程序中总变换矩阵引用

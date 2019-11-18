@@ -19,11 +19,14 @@ public class MatrixState {
     private static float[] mMVPMatrix;//最后起作用的总变换矩阵
     private static float[] currMatrix;//当前变换矩阵
     public static float[] lightLocationSun = new float[]{0, 0, 0};//太阳定位光光源位置
+    public static float[] lightLocation=new float[]{0,0,0};//定位光光源位置
+    public static FloatBuffer lightPositionFB;
     public static FloatBuffer cameraFB;
     public static FloatBuffer lightPositionFBSun;
 
 
     public static Stack<float[]> mStack = new Stack<float[]>();//保护变换矩阵的栈
+    public static int stackTop=-1;
 
     public static void setInitStack()//获取不变换初始矩阵
     {
@@ -33,12 +36,14 @@ public class MatrixState {
 
     public static void pushMatrix()//保护变换矩阵
     {
+        stackTop++;
         mStack.push(currMatrix.clone());
     }
 
     public static void popMatrix()//恢复变换矩阵
     {
         currMatrix = mStack.pop();
+        stackTop--;
     }
 
     public static void translate(float x, float y, float z)//设置沿xyz轴移动
@@ -154,6 +159,22 @@ public class MatrixState {
     //获取具体物体的变换矩阵
     public static float[] getMMatrix() {
         return currMatrix;
+    }
+
+    //设置灯光位置的方法
+    static ByteBuffer llbbL = ByteBuffer.allocateDirect(3*4);
+    public static void setLightLocation(float x,float y,float z)
+    {
+        llbbL.clear();
+
+        lightLocation[0]=x;
+        lightLocation[1]=y;
+        lightLocation[2]=z;
+
+        llbbL.order(ByteOrder.nativeOrder());//设置字节顺序
+        lightPositionFB=llbbL.asFloatBuffer();
+        lightPositionFB.put(lightLocation);
+        lightPositionFB.position(0);
     }
 
     //设置太阳光源位置的方法

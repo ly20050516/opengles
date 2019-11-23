@@ -23,6 +23,7 @@ import ly.com.light.sample0601.Light0601Activity;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
 import ly.com.project.sample0501.Project0501Activity;
 import ly.com.project.sample0502.Project0502Activity;
+import ly.com.project.sample0503.Project0503Activity;
 import ly.com.texture.sample0702.Texture0702Activity;
 import ly.com.texture.sample0701.Texture0701Activity;
 import ly.com.texture.sample0703.Texture0703Activity;
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         ChapterItem chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_1), Project0501Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_2), Project0502Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_3), Project0503Activity.class);
         chapterItems.add(chapterItem);
 
         chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_1), Light0601Activity.class);

@@ -19,6 +19,9 @@
             android:name="ly.com.project.sample0503.Project0503Activity"
             android:label="@string/chapter_project_sample_5_3"/>
         <activity
+            android:name="ly.com.project.sample0504.Project0504Activity"
+            android:label="@string/chapter_project_sample_5_4"/>
+        <activity
             android:name="ly.com.light.sample0601.Light0601Activity"
             android:label="@string/chapter_light_sample_6_1"/>
         <activity

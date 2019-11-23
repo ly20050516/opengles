@@ -21,7 +21,9 @@
         <activity android:name="ly.com.light.sample0604.Light0604Activity"
             android:label="@string/chapter_light_sample_6_4"/>
         <activity android:name="ly.com.light.sample0605.Light0605Activity"
-            android:label="@string/chapter_light_sample_6_5"/>
+        android:label="@string/chapter_light_sample_6_5"/>
+        <activity android:name="ly.com.light.sample0606.Light0606Activity"
+            android:label="@string/chapter_light_sample_6_6"/>
         <activity
             android:name="ly.com.texture.sample0704.Texture0704Activity"
             android:label="@string/chapter_texture_sample_7_4"/>

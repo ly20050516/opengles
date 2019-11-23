@@ -14,6 +14,10 @@ import ly.com.light.sample0603.Light0603Activity;
 import ly.com.light.sample0604.Light0604Activity;
 import ly.com.light.sample0605.Light0605Activity;
 import ly.com.light.sample0606.Light0606Activity;
+import ly.com.light.sample0607.Light0607Activity;
+import ly.com.light.sample0608.Light0608Activity;
+import ly.com.light.sample0609.Light0609Activity;
+import ly.com.light.sample0610.Light0610Activity;
 import ly.com.opengles.R;
 import ly.com.light.sample0601.Light0601Activity;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
@@ -64,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
         chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_5), Light0605Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_6), Light0606Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_7), Light0607Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_8), Light0608Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_9), Light0609Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_10), Light0610Activity.class);
         chapterItems.add(chapterItem);
 
 

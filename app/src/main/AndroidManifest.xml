@@ -24,6 +24,14 @@
         android:label="@string/chapter_light_sample_6_5"/>
         <activity android:name="ly.com.light.sample0606.Light0606Activity"
             android:label="@string/chapter_light_sample_6_6"/>
+        <activity android:name="ly.com.light.sample0607.Light0607Activity"
+            android:label="@string/chapter_light_sample_6_7"/>
+        <activity android:name="ly.com.light.sample0608.Light0608Activity"
+            android:label="@string/chapter_light_sample_6_8"/>
+        <activity android:name="ly.com.light.sample0609.Light0609Activity"
+            android:label="@string/chapter_light_sample_6_9"/>
+        <activity android:name="ly.com.light.sample0610.Light0610Activity"
+            android:label="@string/chapter_light_sample_6_10"/>
         <activity
             android:name="ly.com.texture.sample0704.Texture0704Activity"
             android:label="@string/chapter_texture_sample_7_4"/>

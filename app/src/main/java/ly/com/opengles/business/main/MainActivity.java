@@ -28,6 +28,7 @@ import ly.com.project.sample0504.Project0504Activity;
 import ly.com.project.sample0505.Project0505Activity;
 import ly.com.project.sample0506.Project0506Activity;
 import ly.com.project.sample0507.Project0507Activity;
+import ly.com.project.sample0508.Project0508Activity;
 import ly.com.texture.sample0702.Texture0702Activity;
 import ly.com.texture.sample0701.Texture0701Activity;
 import ly.com.texture.sample0703.Texture0703Activity;
@@ -76,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_6), Project0506Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_7), Project0507Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_project_sample_5_8), Project0508Activity.class);
         chapterItems.add(chapterItem);
 
         chapterItem = new ChapterItem(getString(R.string.chapter_light_sample_6_1), Light0601Activity.class);

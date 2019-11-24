@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/light/light.iml" filepath="$PROJECT_DIR$/light/light.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mixfog/mixfog.iml" filepath="$PROJECT_DIR$/mixfog/mixfog.iml" />
       <module fileurl="file://$PROJECT_DIR$/opengles.iml" filepath="$PROJECT_DIR$/opengles.iml" />
       <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
       <module fileurl="file://$PROJECT_DIR$/texture/texture.iml" filepath="$PROJECT_DIR$/texture/texture.iml" />

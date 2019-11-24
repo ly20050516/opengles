@@ -126,10 +126,10 @@ public class Belt {
     public void initShader(Project0508SurfaceView mv)
     {
         // 加载顶点着色器的脚本内容
-        mVertexShader = ShaderUtil.loadFromAssetsFile("project_sample_5_7/vertex.glsl",
+        mVertexShader = ShaderUtil.loadFromAssetsFile("project_sample_5_8/vertex.glsl",
                 mv.getResources());
         // 加载片元着色器的脚本内容
-        mFragmentShader = ShaderUtil.loadFromAssetsFile("project_sample_5_7/frag.glsl",
+        mFragmentShader = ShaderUtil.loadFromAssetsFile("project_sample_5_8/frag.glsl",
                 mv.getResources());
         //基于顶点着色器与片元着色器创建程序
         mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);

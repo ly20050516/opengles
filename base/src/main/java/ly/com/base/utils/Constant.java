@@ -17,4 +17,7 @@ public class Constant {
     public static final int GL_LINE_LOOP = 3;
 
     public static int CURR_DRAW_MODE = 0;//当前绘制方式
+
+    public static int SCREEN_WIDTH = 800;
+    public static int SCREEN_HEIGHT = 480;
 }

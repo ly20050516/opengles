@@ -34,4 +34,6 @@
     <string name="chapter_texture_sample_7_2">纹理映射-Sample-7-2</string>
     <string name="chapter_texture_sample_7_3">纹理映射-Sample-7-3</string>
     <string name="chapter_texture_sample_7_4">纹理映射-Sample-7-4</string>
+
+    <string name="chapter_mixfog_sample_10_1">混合与雾-Sample-10-1</string>
 </resources>

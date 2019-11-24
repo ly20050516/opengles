@@ -18,6 +18,7 @@ import ly.com.light.sample0607.Light0607Activity;
 import ly.com.light.sample0608.Light0608Activity;
 import ly.com.light.sample0609.Light0609Activity;
 import ly.com.light.sample0610.Light0610Activity;
+import ly.com.mixfog.sample1001.MixFog1001Activity;
 import ly.com.opengles.R;
 import ly.com.light.sample0601.Light0601Activity;
 import ly.com.opengles.business.main.adapter.ChapterAdapter;
@@ -122,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
         chapterItem = new ChapterItem(getString(R.string.chapter_texture_sample_7_4), Texture0704Activity.class);
         chapterItems.add(chapterItem);
 
+        chapterItem = new ChapterItem(getString(R.string.chapter_mixfog_sample_10_1), MixFog1001Activity.class);
+        chapterItems.add(chapterItem);
 
         chapterAdapter.setChapterItemList(chapterItems);
         chapterAdapter.setChapterAdapterListener(new ChapterAdapter.ChapterAdapterListener() {

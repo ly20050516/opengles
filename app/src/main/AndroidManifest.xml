@@ -75,8 +75,11 @@
             android:name="ly.com.texture.sample0702.Texture0702Activity"
             android:label="@string/chapter_texture_sample_7_2" />
         <activity
-            android:name="ly.com.texture.sample0701.Texture0701Activity"
-            android:label="@string/chapter_texture_sample_7_1" />
+        android:name="ly.com.texture.sample0701.Texture0701Activity"
+        android:label="@string/chapter_texture_sample_7_1" />
+        <activity
+            android:name="ly.com.mixfog.sample1001.MixFog1001Activity"
+            android:label="@string/chapter_mixfog_sample_10_1" />
         <activity
             android:name=".business.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

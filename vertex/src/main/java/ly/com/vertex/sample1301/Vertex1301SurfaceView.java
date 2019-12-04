@@ -21,11 +21,11 @@ import ly.com.vertex.R;
  * @author：ly on 2019-12-04 22:32
  * @mail：liuyan@zhimei.ai
  */
-public class Vertex1301SurfaceView  extends GLSurfaceView {
+public class Vertex1301SurfaceView extends GLSurfaceView {
 
     SceneRenderer mRenderer;//场景渲染器
     int textureFlagId;//系统分配的国旗纹理id
-    private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
+    private final float TOUCH_SCALE_FACTOR = 180.0f / 320;//角度缩放比例
     float xAngle;//整体场景绕X轴旋转的角度
     float yAngle;//整体场景绕Y轴旋转的角度
     private float mPreviousX;//上次的触控位置X坐标
@@ -33,8 +33,7 @@ public class Vertex1301SurfaceView  extends GLSurfaceView {
 
     //触摸事件回调方法
     @Override
-    public boolean onTouchEvent(MotionEvent e)
-    {
+    public boolean onTouchEvent(MotionEvent e) {
         float x = e.getX();
         float y = e.getY();
         switch (e.getAction()) {
@@ -53,24 +52,22 @@ public class Vertex1301SurfaceView  extends GLSurfaceView {
     public Vertex1301SurfaceView(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
-        mRenderer = new SceneRenderer();	//创建场景渲染器
-        setRenderer(mRenderer);				//设置渲染器
+        mRenderer = new SceneRenderer();    //创建场景渲染器
+        setRenderer(mRenderer);                //设置渲染器
         setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);//设置渲染模式为主动渲染
         setKeepScreenOn(true);
     }
 
-    class SceneRenderer implements GLSurfaceView.Renderer
-    {
+    class SceneRenderer implements GLSurfaceView.Renderer {
         TextureRect texRect;//表示国旗的纹理矩形
 
-        public void onDrawFrame(GL10 gl)
-        {
+        public void onDrawFrame(GL10 gl) {
             //清除深度缓冲与颜色缓冲
-            GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
+            GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
             MatrixState.pushMatrix();
             MatrixState.translate(0, 0, -1);
-            MatrixState.rotate(yAngle,0,1,0);
-            MatrixState.rotate(xAngle,1,0,0);
+            MatrixState.rotate(yAngle, 0, 1, 0);
+            MatrixState.rotate(xAngle, 1, 0, 0);
             //绘制纹理矩形
             texRect.drawSelf(textureFlagId);
             MatrixState.popMatrix();
@@ -84,19 +81,19 @@ public class Vertex1301SurfaceView  extends GLSurfaceView {
             //调用此方法计算产生透视投影矩阵
             MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 4, 100);
             //调用此方法产生摄像机9参数位置矩阵
-            MatrixState.setCamera(0,0,5,0f,0f,0f,0f,1.0f,0.0f);
+            MatrixState.setCamera(0, 0, 5, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             //设置屏幕背景色RGBA
-            GLES20.glClearColor(0.0f,0.0f,0.0f,1.0f);
+            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 //            GLES20.glClearColor(1.0f,1.0f,1.0f,1.0f);
             //创建纹理矩形对对象
-            texRect=new TextureRect(Vertex1301SurfaceView.this);
+            texRect = new TextureRect(Vertex1301SurfaceView.this);
             //打开深度检测
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
             //初始化纹理
-            textureFlagId=initTexture(R.drawable.android_flag);
+            textureFlagId = initTexture(R.drawable.android_flag);
             //关闭背面剪裁
             GLES20.glDisable(GLES20.GL_CULL_FACE);
             //初始化变换矩阵
@@ -114,28 +111,22 @@ public class Vertex1301SurfaceView  extends GLSurfaceView {
                         textures,   //纹理id的数组
                         0           //偏移量
                 );
-        int textureId=textures[0];
+        int textureId = textures[0];
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureId);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER,GLES20.GL_NEAREST);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_MAG_FILTER,GLES20.GL_LINEAR);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S,GLES20.GL_CLAMP_TO_EDGE);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,GLES20.GL_CLAMP_TO_EDGE);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
 
         //通过输入流加载图片===============begin===================
         InputStream is = this.getResources().openRawResource(drawableId);
         Bitmap bitmapTmp;
-        try
-        {
+        try {
             bitmapTmp = BitmapFactory.decodeStream(is);
-        }
-        finally
-        {
-            try
-            {
+        } finally {
+            try {
                 is.close();
-            }
-            catch(IOException e)
-            {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -143,11 +134,11 @@ public class Vertex1301SurfaceView  extends GLSurfaceView {
         GLUtils.texImage2D
                 (
                         GLES20.GL_TEXTURE_2D,   //纹理类型，在OpenGL ES中必须为GL10.GL_TEXTURE_2D
-                        0, 					  //纹理的层次，0表示基本图像层，可以理解为直接贴图
-                        bitmapTmp, 			  //纹理图像
-                        0					  //纹理边框尺寸
+                        0,                      //纹理的层次，0表示基本图像层，可以理解为直接贴图
+                        bitmapTmp,              //纹理图像
+                        0                      //纹理边框尺寸
                 );
-        bitmapTmp.recycle(); 		  //纹理加载成功后释放图片
+        bitmapTmp.recycle();          //纹理加载成功后释放图片
         return textureId;
     }
 }

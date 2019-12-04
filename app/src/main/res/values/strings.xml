@@ -38,4 +38,8 @@
     <string name="chapter_mixfog_sample_10_1">混合与雾-Sample-10-1</string>
 
     <string name="chapter_vertex_sample_13_1">顶点着色器的妙用-Sample-13-1</string>
+    <string name="chapter_vertex_sample_13_2">顶点着色器的妙用-Sample-13-2</string>
+    <string name="chapter_vertex_sample_13_3">顶点着色器的妙用-Sample-13-3</string>
+    <string name="chapter_vertex_sample_13_4">顶点着色器的妙用-Sample-13-4</string>
+    <string name="chapter_vertex_sample_13_5">顶点着色器的妙用-Sample-13-5</string>
 </resources>

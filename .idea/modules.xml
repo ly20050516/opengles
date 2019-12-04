@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/opengles.iml" filepath="$PROJECT_DIR$/opengles.iml" />
       <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
       <module fileurl="file://$PROJECT_DIR$/texture/texture.iml" filepath="$PROJECT_DIR$/texture/texture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertex/vertex.iml" filepath="$PROJECT_DIR$/vertex/vertex.iml" />
     </modules>
   </component>
 </project>

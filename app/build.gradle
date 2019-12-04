@@ -34,4 +34,5 @@ dependencies {
     implementation project(path: ':light')
     implementation project(path: ':texture')
     implementation project(path: ':mixfog')
+    implementation project(path: ':vertex')
 }

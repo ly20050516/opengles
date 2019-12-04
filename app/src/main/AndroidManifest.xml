@@ -81,6 +81,9 @@
             android:name="ly.com.mixfog.sample1001.MixFog1001Activity"
             android:label="@string/chapter_mixfog_sample_10_1" />
         <activity
+            android:name="ly.com.vertex.sample1301.Vertex1301Activity"
+            android:label="@string/chapter_vertex_sample_13_1" />
+        <activity
             android:name=".business.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_main"

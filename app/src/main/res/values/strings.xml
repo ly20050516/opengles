@@ -36,4 +36,6 @@
     <string name="chapter_texture_sample_7_4">纹理映射-Sample-7-4</string>
 
     <string name="chapter_mixfog_sample_10_1">混合与雾-Sample-10-1</string>
+
+    <string name="chapter_vertex_sample_13_1">顶点着色器的妙用-Sample-13-1</string>
 </resources>

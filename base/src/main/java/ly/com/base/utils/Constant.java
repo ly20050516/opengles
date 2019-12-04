@@ -5,6 +5,9 @@ package ly.com.base.utils;
  * @mail：liuyan@zhimei.ai
  */
 public class Constant {
+
+    public static boolean threadFlag=true;//旗帜换帧线程工作标志位
+
     //单位尺寸
     public static final float UNIT_SIZE=1f;
     //计算GLSurfaceView的宽高比

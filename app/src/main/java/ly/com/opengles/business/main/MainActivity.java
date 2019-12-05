@@ -40,6 +40,7 @@ import ly.com.texture.sample0704.Texture0704Activity;
 import ly.com.opengles.entity.ChapterItem;
 import ly.com.vertex.sample1301.Vertex1301Activity;
 import ly.com.vertex.sample1302.Vertex1302Activity;
+import ly.com.vertex.sample1303.Vertex1303Activity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -131,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
         chapterItem = new ChapterItem(getString(R.string.chapter_vertex_sample_13_1), Vertex1301Activity.class);
         chapterItems.add(chapterItem);
         chapterItem = new ChapterItem(getString(R.string.chapter_vertex_sample_13_2), Vertex1302Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_vertex_sample_13_3), Vertex1303Activity.class);
         chapterItems.add(chapterItem);
 
         chapterAdapter.setChapterItemList(chapterItems);

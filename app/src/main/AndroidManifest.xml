@@ -93,6 +93,9 @@
             android:name="ly.com.vertex.sample1304.Vertex1304Activity"
             android:label="@string/chapter_vertex_sample_13_4" />
         <activity
+            android:name="ly.com.vertex.sample1305.Vertex1305Activity"
+            android:label="@string/chapter_vertex_sample_13_5" />
+        <activity
             android:name=".business.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_main"

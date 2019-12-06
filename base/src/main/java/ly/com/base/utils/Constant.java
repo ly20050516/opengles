@@ -249,4 +249,9 @@ public class Constant {
 
     public static final float MAX_S_GHXP=1.0f;//国画小品最大S纹理坐标
     public static final float MAX_T_GHXP=1.0f;//国画小品最大T纹理坐标
+
+    //三角形边长
+    public static float triangle_edgeLength=8f;
+    //三角形组层数
+    public static int triangle_levelNum=40;
 }

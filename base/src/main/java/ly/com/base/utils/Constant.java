@@ -243,4 +243,10 @@ public class Constant {
     //天空球的相关属性
     public static final float SKY_BALL_RADIUS = 1.49F * FLOOR_WIDTH;//天空球的半径
     public static float sky_rotation = 0;
+
+    public static final float MAX_S_QHC=1.0f;//青花瓷最大S纹理坐标
+    public static final float MAX_T_QHC=0.746f;//青花瓷最大T纹理坐标
+
+    public static final float MAX_S_GHXP=1.0f;//国画小品最大S纹理坐标
+    public static final float MAX_T_GHXP=1.0f;//国画小品最大T纹理坐标
 }

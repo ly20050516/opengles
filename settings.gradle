@@ -1,2 +1,2 @@
-include ':app', ':base', ':light', ':texture', ':project', ':mixfog', ':vertex'
+include ':app', ':base', ':light', ':texture', ':project', ':mixfog', ':vertex', ':fragment'
 rootProject.name='opengles'

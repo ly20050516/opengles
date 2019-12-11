@@ -42,4 +42,6 @@
     <string name="chapter_vertex_sample_13_3">顶点着色器的妙用-Sample-13-3</string>
     <string name="chapter_vertex_sample_13_4">顶点着色器的妙用-Sample-13-4</string>
     <string name="chapter_vertex_sample_13_5">顶点着色器的妙用-Sample-13-5</string>
+
+    <string name="chapter_fragment_sample_14_1">片元着色器的妙用-Sample-14-1</string>
 </resources>

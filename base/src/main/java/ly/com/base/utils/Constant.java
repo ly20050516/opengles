@@ -19,7 +19,7 @@ public class Constant {
     public static boolean threadFlag = true;//旗帜换帧线程工作标志位
 
     //单位尺寸
-    public static final float UNIT_SIZE = 100f;
+    public static final float UNIT_SIZE = 1f;
     //计算GLSurfaceView的宽高比
     public static float ratio;
 

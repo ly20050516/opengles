@@ -44,4 +44,14 @@
     <string name="chapter_vertex_sample_13_5">顶点着色器的妙用-Sample-13-5</string>
 
     <string name="chapter_fragment_sample_14_1">片元着色器的妙用-Sample-14-1</string>
+    <string name="chapter_fragment_sample_14_2">片元着色器的妙用-Sample-14-2</string>
+    <string name="chapter_fragment_sample_14_3">片元着色器的妙用-Sample-14-3</string>
+    <string name="chapter_fragment_sample_14_4">片元着色器的妙用-Sample-14-4</string>
+    <string name="chapter_fragment_sample_14_5">片元着色器的妙用-Sample-14-5</string>
+    <string name="chapter_fragment_sample_14_6">片元着色器的妙用-Sample-14-6</string>
+    <string name="chapter_fragment_sample_14_7">片元着色器的妙用-Sample-14-7</string>
+    <string name="chapter_fragment_sample_14_8">片元着色器的妙用-Sample-14-8</string>
+    <string name="chapter_fragment_sample_14_9">片元着色器的妙用-Sample-14-9</string>
+    <string name="chapter_fragment_sample_14_10">片元着色器的妙用-Sample-14-10</string>
+    <string name="chapter_fragment_sample_14_11">片元着色器的妙用-Sample-14-11</string>
 </resources>

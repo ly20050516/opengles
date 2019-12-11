@@ -99,6 +99,9 @@
             android:name="ly.com.fragment.sample1401.Fragment1401Activity"
             android:label="@string/chapter_fragment_sample_14_1" />
         <activity
+            android:name="ly.com.fragment.sample1402.Fragment1402Activity"
+            android:label="@string/chapter_fragment_sample_14_2" />
+        <activity
             android:name=".business.main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_main"

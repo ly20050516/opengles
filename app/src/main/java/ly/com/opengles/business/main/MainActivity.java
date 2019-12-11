@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import ly.com.fragment.sample1401.Fragment1401Activity;
+import ly.com.fragment.sample1402.Fragment1402Activity;
 import ly.com.light.sample0602.Light0602Activity;
 import ly.com.light.sample0603.Light0603Activity;
 import ly.com.light.sample0604.Light0604Activity;
@@ -144,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
         chapterItems.add(chapterItem);
 
         chapterItem = new ChapterItem(getString(R.string.chapter_fragment_sample_14_1), Fragment1401Activity.class);
+        chapterItems.add(chapterItem);
+        chapterItem = new ChapterItem(getString(R.string.chapter_fragment_sample_14_2), Fragment1402Activity.class);
         chapterItems.add(chapterItem);
 
         chapterAdapter.setChapterItemList(chapterItems);
